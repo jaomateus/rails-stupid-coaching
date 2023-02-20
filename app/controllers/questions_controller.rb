@@ -7,8 +7,9 @@ class QuestionsController < ApplicationController
 
     if @question == 'I am going to work'
       @answer = "Great!"
-    elsif @question.last == '?'
+    elsif @question.include?('?')
       @answer = "Silly question, get dressed and go to work!."
+      raise
     else
       @answer = "I don't care, get dressed and go to work!"
     end
